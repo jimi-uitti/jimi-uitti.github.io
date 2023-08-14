@@ -1,0 +1,42 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Supersankarikoulun Nettipeli</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="scenes/Menu.js"></script>
+    <script src="scenes/Skip.js"></script>
+    <script src="scenes/Verryttely.js"></script>
+    <script src="scenes/Voimailu.js"></script>
+    <script src="scenes/Taito.js"></script>
+    <script src="scenes/Notkistelut.js"></script>
+    <script src="scenes/Ohje.js"></script>
+    <script src="scenes/Peli.js"></script>
+    <script src="scenes/Loppu.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="game"></div>
+<script type="text/javascript"> //tästä alkaa pelin skripti
+    var config = {
+        type: Phaser.AUTO,
+        parent: "game",
+        physics: {
+            default: 'arcade',
+        arcade: {
+          gravity: { y: 0 }
+        }
+    },
+        width: 800,
+        height: 600,
+        backgroundColor: "#FFFFFF",
+        scene: [ Menu, Skip, Verryttely, Voimailu, Taito, Notkistelut, Ohje, Peli, Loppu ]
+    };
+    const game = new Phaser.Game(config);
+</script>
+</body>
+</html>
